@@ -214,6 +214,10 @@ void fire( player_t* p )
   default_->add_action( "do_treacherous_transmitter_task,use_off_gcd=1,if=buff.combustion.up|fight_remains<20" );
   default_->add_action( "use_item,name=imperfect_ascendancy_serum,if=variable.time_to_combustion<3" );
   default_->add_action( "use_item,name=neural_synapse_enhancer,if=buff.combustion.remains>7|fight_remains<15" );
+  default_->add_action( "use_item,name=flarendos_pilot_light,if=buff.combustion.remains>7|fight_remains<15" );
+  default_->add_action( "use_item,name=signet_of_the_priory,if=buff.combustion.remains>7|fight_remains<15" );
+  default_->add_action( "use_item,name=house_of_cards,if=buff.combustion.remains>7|fight_remains<15" );
+  default_->add_action( "use_item,name=funhouse_lens,if=buff.combustion.remains>7|fight_remains<15" );
   default_->add_action( "use_item,effect_name=gladiators_badge,if=variable.time_to_combustion>cooldown-5" );
   default_->add_action( "use_items,if=!variable.item_cutoff_active" );
   default_->add_action( "variable,use_off_gcd=1,use_while_casting=1,name=fire_blast_pooling,value=buff.combustion.down&action.fire_blast.charges_fractional+(variable.time_to_combustion+action.shifting_power.full_reduction*variable.shifting_power_before_combustion)%cooldown.fire_blast.duration-1<cooldown.fire_blast.max_charges+variable.overpool_fire_blasts%cooldown.fire_blast.duration-(buff.combustion.duration%cooldown.fire_blast.duration)%%1&variable.time_to_combustion<fight_remains", "Pool as many Fire Blasts as possible for Combustion." );
